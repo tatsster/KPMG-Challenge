@@ -18,7 +18,8 @@
 # sys library has been used for printing the size of data structures used in the program
 import numpy as np
 import PyPDF2
-import fpdf
+import fpdf     # to print PDF summary
+import fitz     # to highlight sentence in PDF
 import sys
 
 
@@ -75,6 +76,7 @@ from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
 # we are going to show an example of how the method is working
 # first let's take the document as an input
 def readDoc():
+    global name
     name = input('Please input a file name: ') 
     print('You have asked for the document {}'.format(name))
 
@@ -87,21 +89,21 @@ def readDoc():
         choice = 3
         # print(name)
     print(choice)
-    # Case 1: if it is a .txt file
-        
+
+    document = ''
+    # Case 1: if it is a .txt file    
     if choice == 1:
         f = open(name, 'r')
         document = f.read()
         f.close()
-            
     # Case 2: if it is a .pdf file
     elif choice == 2:
         pdfFileObj = open(name, 'rb')
         pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
-        pageObj = pdfReader.getPage(0)
-        document = pageObj.extractText()
+        for i in range(pdfReader.getNumPages()):
+            pageObj = pdfReader.getPage(i)
+            document += pageObj.extractText()
         pdfFileObj.close()
-    
     # Case 3: none of the format
     else:
         print('Failed to load a valid file')
@@ -317,7 +319,7 @@ print(len(temp_array))
 # Calculation of threshold:
 # We take the mean value of normalized scores
 # any sentence with the normalized score 0.2 more than the mean value is considered to be 
-threshold = (sum(temp_array) / len(temp_array)) + 0.05
+threshold = (sum(temp_array) / len(temp_array)) + 0.2
 
 
 # Separate out the sentences that satiasfy the criteria of having a score above the threshold
@@ -350,6 +352,8 @@ output_pdf = fpdf.FPDF(format='letter')
 output_pdf.add_page()
 output_pdf.set_font("Arial", size = 12)
 
+final = []
+
 for lines in sentence_list:
     line = str(lines)
     line = str.encode(line).replace(b'\n', b'')
@@ -358,13 +362,17 @@ for lines in sentence_list:
 
     # print(line[1:])
     output_pdf.write(5, line[2:-1])
+    final.append(line[2:-1])
     output_pdf.ln(10)
 
 output_pdf.output("summary.pdf")
 
-'''
-for lines in sentence_list:
-    print(lines)
-''' 
+highlight = fitz.open(name)
+page = highlight[0]
+for line in final:
+    sentence = page.searchFor(line)
+    for sen in sentence:
+        page.addHighlightAnnot(sen)
+highlight.save("highlight.pdf", garbage = 4, deflate = True, clean = True)
 
 # End of the notebook
