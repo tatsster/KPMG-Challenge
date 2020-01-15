@@ -77,7 +77,8 @@ from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
 # first let's take the document as an input
 def readDoc():
     global name
-    name = input('Please input a file name: ') 
+    # name = input('Please input a file name: ') 
+    name = str(sys.argv[1])
     print('You have asked for the document {}'.format(name))
 
     # now read the type of document
