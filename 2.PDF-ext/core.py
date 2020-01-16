@@ -77,7 +77,8 @@ from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
 # first let's take the document as an input
 def readDoc():
     global name
-    name = input('Please input a file name: ') 
+    # name = input('Please input a file name: ') 
+    name = str(sys.argv[1])
     print('You have asked for the document {}'.format(name))
 
     # now read the type of document
@@ -365,14 +366,14 @@ for lines in sentence_list:
     final.append(line[2:-1])
     output_pdf.ln(10)
 
-output_pdf.output("summary.pdf")
+output_pdf.output(name.replace(".pdf", "_") + "summary.pdf")
 
 highlight = fitz.open(name)
-page = highlight[0]
-for line in final:
-    sentence = page.searchFor(line)
-    for sen in sentence:
-        page.addHighlightAnnot(sen)
-highlight.save("highlight.pdf", garbage = 4, deflate = True, clean = True)
+for page in highlight:
+    for line in final:
+        sentence = page.searchFor(line)
+        for sen in sentence:
+            page.addHighlightAnnot(sen)
+highlight.save(name.replace(".pdf", "_") + "highlight.pdf", garbage = 4, deflate = True, clean = True)
 
 # End of the notebook

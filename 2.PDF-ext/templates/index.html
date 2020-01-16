@@ -1,0 +1,214 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ESKIMMER TEAM 3</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/gijgo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/slick.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/slicknav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <!-- logo here-->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename='img/logo.png') }}" />
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="{{ url_for('static',filename='img/logo.png') }}" alt="" style="height: 100px;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="Appointment">
+                                <div class="book_btn d-none d-lg-block">
+                                    <a  href="#"> <i class="fa fa-phone"></i> +123 456 789</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <div class="shap_big_2 d-none d-lg-block">
+        <img src="{{ url_for('static',filename='img/ilstrator/body_shap_2.png') }}" alt="">
+    </div>
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="shap_img_1 d-none d-lg-block">
+            <img src="{{ url_for('static',filename='img/ilstrator/body_shap_1.png') }}" alt="">
+        </div>
+        <div class="poly_img">
+            <img src="{{ url_for('static',filename='img/ilstrator/poly.png') }}" alt="">
+        </div>
+        <div class="single_slider  d-flex align-items-center slider_bg_1">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-10 offset-xl-1">
+                        <div class="slider_text text-center">
+                            <div class="text">
+                                <h3>
+                                    BoostUp your Business, <br>
+                                        Your Productive Reading Process Start Here
+                                </h3>
+                            <a class="boxed-btn3" href="{{ url_for('summarize') }}">Get Started</a>
+                            </div>
+                            <div class="ilstrator_thumb">
+                                <img src="{{ url_for('static',filename='img/ilstrator/illustration.png') }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <footer class="footer">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 col-lg-3">
+                            <div class="footer_widget">
+                                <div class="footer_logo">
+                                    <a href="#">
+                                        <img src="{{ url_for('static',filename='img/logo.png') }}" alt="">
+                                    </a>
+                                </div>
+                                <p>
+                                        Esteem spirit temper too say adieus who direct esteem. It esteems luckily or picture placing drawing.
+                                </p>
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-twitter-alt"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+    
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-md-6 col-lg-3">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                        Services
+                                </h3>
+                                <ul>
+                                    <li><a href="#">Marketing &amp; SEO</a></li>
+                                    <li><a href="#"> Startup</a></li>
+                                    <li><a href="#">Finance solution</a></li>
+                                    <li><a href="#">Food</a></li>
+                                    <li><a href="#">Travel</a></li>
+                                </ul>
+    
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-md-6 col-lg-2">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                        Useful Links
+                                </h3>
+                                <ul>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#"> Contact</a></li>
+                                    <li><a href="#">Appointment</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <!-- JS here -->
+
+    <script src="{{ url_for('static',filename='js/vendor/modernizr-3.5.0.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/ajax-form.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/scrollIt.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.scrollUp.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/wow.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/nice-select.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.slicknav.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/gijgo.min.js') }}"></script>
+
+    <!--contact js-->
+    <script src="{{ url_for('static',filename='js/contact.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.form.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.validate.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/mail-script.js') }}"></script>
+
+    <script src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
