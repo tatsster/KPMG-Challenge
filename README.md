@@ -1,6 +1,10 @@
 # KPMG-Challenge
 Text Summarizer for KIC 2020
 
+# Contributors:
+- [Me](https://github.com/Coder-Pham) for developing NLP core function
+- [Nguyen Ngoc Phat](https://github.com/ngocphat-fsdev) for developing website
+
 ## Running the code
 ### Libraries
 
